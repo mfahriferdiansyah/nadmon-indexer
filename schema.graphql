@@ -1,0 +1,104 @@
+type NadmonNFT_Approval {
+  id: ID!
+  owner: String!
+  approved: String!
+  tokenId: BigInt!
+}
+
+type NadmonNFT_ApprovalForAll {
+  id: ID!
+  owner: String!
+  operator: String!
+  approved: Boolean!
+}
+
+type NadmonNFT_ExpeditionCompleted {
+  id: ID!
+  player: String!
+  tokenId: BigInt!
+  cookiesReward: BigInt!
+}
+
+type NadmonNFT_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type NadmonNFT_NadmonEvolved {
+  id: ID!
+  tokenId: BigInt!
+  newEvo: BigInt!
+  fusionPoints: BigInt!
+}
+
+type NadmonNFT_NadmonMinted {
+  id: ID!
+  owner: String!
+  tokenId: BigInt!
+  packId: BigInt!
+  sequence: BigInt!
+  nadmonType: String!
+  element: String!
+  rarity: String!
+  hp: BigInt!
+  attack: BigInt!
+  defense: BigInt!
+  crit: BigInt!
+  fusion: BigInt!
+  evo: BigInt!
+}
+
+type NadmonNFT_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type NadmonNFT_PackMinted {
+  id: ID!
+  player: String!
+  packId: BigInt!
+  sequence: BigInt!
+  tokenIds: [BigInt!]!
+  paymentType: String!
+}
+
+type NadmonNFT_PackPurchased {
+  id: ID!
+  buyer: String!
+  firstTokenId: BigInt!
+  packSize: BigInt!
+  paymentMethod: String!
+}
+
+type NadmonNFT_StatsChanged {
+  id: ID!
+  tokenId: BigInt!
+  sequence: BigInt!
+  changeType: String!
+  newHp: BigInt!
+  newAttack: BigInt!
+  newDefense: BigInt!
+  newCrit: BigInt!
+  newFusion: BigInt!
+  newEvo: BigInt!
+  oldHp: BigInt!
+  oldAttack: BigInt!
+  oldDefense: BigInt!
+  oldCrit: BigInt!
+  oldFusion: BigInt!
+  oldEvo: BigInt!
+}
+
+type NadmonNFT_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  tokenId: BigInt!
+}
+
+type NadmonNFT_Upgraded {
+  id: ID!
+  implementation: String!
+}
+

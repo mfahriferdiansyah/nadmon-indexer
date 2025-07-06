@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: indexer
+networks:
+- id: 10143
+  start_block: 0
+  contracts:
+  - name: NadmonNFT
+    address:
+    - 0xd6486e985Db773f3eb5767cE5FBe099e31D87A1e
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
+    - event: ApprovalForAll(address indexed owner, address indexed operator, bool approved)
+    - event: ExpeditionCompleted(address indexed player, uint256 indexed tokenId, uint256 cookiesReward)
+    - event: Initialized(uint64 version)
+    - event: NadmonEvolved(uint256 indexed tokenId, uint256 newEvo, uint256 fusionPoints)
+    - event: NadmonMinted(address indexed owner, uint256 indexed tokenId, uint256 indexed packId, uint256 sequence, string nadmonType, string element, string rarity, uint256 hp, uint256 attack, uint256 defense, uint256 crit, uint256 fusion, uint256 evo)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: PackMinted(address indexed player, uint256 indexed packId, uint256 sequence, uint256[] tokenIds, string paymentType)
+    - event: PackPurchased(address indexed buyer, uint256 indexed firstTokenId, uint256 packSize, string paymentMethod)
+    - event: StatsChanged(uint256 indexed tokenId, uint256 sequence, string changeType, uint256 newHp, uint256 newAttack, uint256 newDefense, uint256 newCrit, uint256 newFusion, uint256 newEvo, uint256 oldHp, uint256 oldAttack, uint256 oldDefense, uint256 oldCrit, uint256 oldFusion, uint256 oldEvo)
+    - event: Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
+    - event: Upgraded(address indexed implementation)
+unordered_multichain_mode: true
